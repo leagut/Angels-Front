@@ -1,0 +1,20 @@
+header{
+    /* background: url(https://media.istockphoto.com/id/1895437842/es/foto/vista-con-dron-de-north-fork-highway-en-el-bosque-nacional-shoshone-wyoming.jpg?s=612x612&w=0&k=20&c=PFmYokOMaPGLVQQfPYRPQ_HIDrHeXT3egSHdiXea4Yw=); */
+   
+    background: url('/assets/f1.jpg') no-repeat center center;
+    background-size: cover;
+   
+}
+
+
+header.div.h1{
+    color: black;
+}
+
+.rbt{
+    width: 200px;
+    height: 200px;
+    
+    background: url('/assets/rabit.webp') no-repeat center center;
+    background-size: cover;
+}

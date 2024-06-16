@@ -8,7 +8,7 @@ header{
 
 
 header.div.h1{
-    color: black;
+    color: rgb(21, 2, 2);
 }
 
 .rbt{
@@ -17,4 +17,22 @@ header.div.h1{
     
     background: url('/assets/rabit.webp') no-repeat center center;
     background-size: cover;
+}
+
+.continn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.negro{
+    font-weight: 400;
+    color: #000;
+}
+
+.negro2{
+    color: #000;
+    font-weight: 500;
+    font-size: 18px;
 }

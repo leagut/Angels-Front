@@ -6,28 +6,22 @@ import { LoginService } from 'src/app/services/auth/login.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-
-export class NavComponent implements OnInit , OnDestroy {
-
+export class NavComponent implements OnInit, OnDestroy {
   userLoginOn:boolean=false;
+  constructor(private loginService:LoginService) { }
 
-  constructor(private loginService: LoginService){}
   ngOnDestroy(): void {
-    this.loginService.currentUserLogin.unsubscribe();
+    this.loginService.currentUserLoginOn.unsubscribe();
   }
 
-
   ngOnInit(): void {
-    this.loginService.currentUserLogin.subscribe(
+    this.loginService.currentUserLoginOn.subscribe(
       {
-        next:(userLoginOn)=>{
+        next:(userLoginOn) => {
           this.userLoginOn=userLoginOn;
         }
       }
     )
   }
-
-  
-  
 
 }

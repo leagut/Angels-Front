@@ -1,0 +1,11 @@
+.users {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .card {
+        display: flex;
+        border: 1px solid black;
+        border-radius: 15px;
+    }
+}

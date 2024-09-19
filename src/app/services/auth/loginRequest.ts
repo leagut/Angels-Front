@@ -1,4 +1,4 @@
 export interface LoginReques{
-    email:string,
+    username:string,
     password:string
 }

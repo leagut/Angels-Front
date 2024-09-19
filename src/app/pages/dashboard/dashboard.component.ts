@@ -9,7 +9,7 @@ import { User } from 'src/app/services/auth/user';
 })
 export class DashboardComponent implements OnInit , OnDestroy {
   userLoginOn:boolean=false;
-  userData?:User;
+  userData?:String;
   constructor(private loginService:LoginService) { }
 
   ngOnDestroy(): void {

@@ -9,7 +9,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule }  from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule }  from '@angular/common/http';
+import { JwtInterceptor } from './interceptors/jwt.interceptor';
+import { UsersComponent } from './pages/users/users/users.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { HttpClientModule }  from '@angular/common/http';
     FooterComponent,
     DashboardComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,13 @@ import { HttpClientModule }  from '@angular/common/http';
     HttpClientModule,
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,52 @@
+.productos{
+    display: flex;
+    
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.cards{
+    padding: 8px;
+    margin: 5px;
+    border: 1px solid  #FBA83C;
+    background-color: #F8F9FA;
+    border-radius: 5px;
+}
+
+.imagen {
+    width: 180px;
+    height: 150px;
+    
+    overflow: hidden; /* Para asegurarte que la imagen no se salga del div */
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir el div sin deformarse */
+    display: block; /* Evita que el img se comporte como inline-block y se desplace */
+}
+
+.boton{
+    background-color: #FFD004;
+    border-radius: 10px;
+    margin-left: 30px;
+    border: 1px solid rgb(255, 255, 255);
+    width: 120px;
+    height: 35px;
+}   
+
+
+.lupa{
+    display: flex;    
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 20px;   
+}
+
+.lupaa{
+    border-radius: 10px;
+    padding: 5px;
+    border: 3px solid #FBA83C;
+}

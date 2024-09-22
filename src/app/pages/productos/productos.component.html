@@ -1,0 +1,18 @@
+
+<div class="lupa" >
+    <input class="lupaa" type="text" [(ngModel)]="searchText" placeholder=" Buscar producto. . ." />
+</div>
+
+<div class="productos">
+    
+    
+
+    <div class="cards" *ngFor="let user of productsData | filter:searchText">
+        <div class="imagen">
+            <img src="https://www.oreo-la.com/images/release/products/Jea7pHdCXozWtQlRyLtADuo565rb9m11037SZMLK.png?v=ok" alt="">
+        </div>
+        <p><b>Name : </b> <span>{{ user?.name }}</span></p>
+        <p><b>Precio : </b> <span>{{ user?.price }}</span></p>
+        <button class="boton">Comprar</button>
+    </div>
+</div>

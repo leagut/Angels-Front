@@ -8,10 +8,12 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LoginComponent } from './auth/login/login.component';
 import { NavComponent } from './shared/nav/nav.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule }  from '@angular/common/http';
 import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { UsersComponent } from './pages/users/users/users.component';
+import { ProductosComponent } from './pages/productos/productos.component';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,13 +23,16 @@ import { UsersComponent } from './pages/users/users/users.component';
     DashboardComponent,
     LoginComponent,
     NavComponent,
-    UsersComponent
+    UsersComponent,
+    ProductosComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule
 
   ],
   providers: [

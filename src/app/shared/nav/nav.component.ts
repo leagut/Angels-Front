@@ -24,4 +24,18 @@ export class NavComponent implements OnInit, OnDestroy {
     )
   }
 
+  logout() {
+    // Borrar los elementos del sessionStorage
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('rol'); // Asumiendo que cargo es el rol
+    sessionStorage.removeItem('username');
+    this.userLoginOn= false; 
+    // Si quieres redirigir después de cerrar sesión
+  
+  }
+
+
+
+
+
 }

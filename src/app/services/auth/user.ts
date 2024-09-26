@@ -4,6 +4,7 @@ export interface User {
     message: string;
     status: string;
     jwt: string;
+    cargo:string
   }
 
 

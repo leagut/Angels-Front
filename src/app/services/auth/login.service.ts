@@ -14,6 +14,9 @@ export class LoginService {
 
   currentUserLoginOn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   currentUserData: BehaviorSubject<String> = new BehaviorSubject<String>('');
+
+ 
+
   
 
   constructor(private http: HttpClient, private route: Router) {
@@ -21,16 +24,21 @@ export class LoginService {
 
     this.currentUserData = new BehaviorSubject<String>(sessionStorage.getItem("token") || "" );   
 
+  
   }
 
   login(credentials: LoginReques): Observable<string> {
     return this.http.post<User>(`${environment.urlHost}auth/log-in`, credentials).pipe(
       tap((user: User) => {
         sessionStorage.setItem("token", user.jwt); // Almacena el token JWT
+        sessionStorage.setItem("rol",user.cargo);
+        sessionStorage.setItem("username",user.username);
+        console.log(user);
+        
         this.currentUserData.next(user.jwt); // Actualiza el valor de currentUserData con el JWT
         this.currentUserLoginOn.next(true); // Marca al usuario como autenticado
         console.log(user);
-        this.route.navigateByUrl('users');        
+        this.route.navigateByUrl('admin');        
       }),
       map((user: User) => user.jwt), // Extrae el JWT de la respuesta
       catchError(this.handleError) // Maneja cualquier error

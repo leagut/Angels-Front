@@ -12,10 +12,10 @@
               <li class="nav-item" *ngIf="!userLoginOn" >
                 
                 <a class="nav-link" routerLink="/iniciar-sesion" >
-                  <img src="https://cdn-icons-png.flaticon.com/512/417/417769.png" alt="" width="35px" >
+                  <img src="https://cdn-icons-png.flaticon.com/512/7333/7333779.png" alt="" width="35px" >
                 </a>
               </li>
-              <li class="nav-item" *ngIf="userLoginOn" >
+              <li class="nav-item" *ngIf="userLoginOn" (click)="logout()" >
                 <a class="nav-link " routerLink="/productos" >Cerrar Sesion </a>
               </li>
         </ul>

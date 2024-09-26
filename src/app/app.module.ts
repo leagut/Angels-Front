@@ -14,6 +14,7 @@ import { JwtInterceptor } from './interceptors/jwt.interceptor';
 import { UsersComponent } from './pages/users/users/users.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { FilterPipe } from './filter.pipe';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FilterPipe } from './filter.pipe';
     NavComponent,
     UsersComponent,
     ProductosComponent,
-    FilterPipe
+    FilterPipe,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

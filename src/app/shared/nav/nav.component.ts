@@ -1,4 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 import { LoginService } from 'src/app/services/auth/login.service';
 
 @Component({
@@ -8,7 +10,9 @@ import { LoginService } from 'src/app/services/auth/login.service';
 })
 export class NavComponent implements OnInit, OnDestroy {
   userLoginOn:boolean=false;
-  constructor(private loginService:LoginService) { }
+  currentUrl: string = '';
+  constructor(private loginService:LoginService,private router: Router) { }
+
 
   ngOnDestroy(): void {
     this.loginService.currentUserLoginOn.unsubscribe();
@@ -22,8 +26,22 @@ export class NavComponent implements OnInit, OnDestroy {
         }
       }
     )
+
+    this.router.events
+    .pipe(filter((event) => event instanceof NavigationEnd))
+    .subscribe((event: any) => {
+      this.currentUrl = event.url;
+    });
+
+
+
   }
 
+  isCurrentRoute(route: string): boolean {
+    return this.currentUrl === route;
+  }
+
+ 
   logout() {
     // Borrar los elementos del sessionStorage
     sessionStorage.removeItem('token');
@@ -33,6 +51,8 @@ export class NavComponent implements OnInit, OnDestroy {
     // Si quieres redirigir después de cerrar sesión
   
   }
+
+
 
 
 

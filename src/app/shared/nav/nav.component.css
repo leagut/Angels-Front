@@ -1,4 +1,14 @@
-.nav-posi{
-    display: flex;
-    justify-content: center;
-}
+.navbar-nav {
+    list-style-type: none; /* Eliminamos los puntos de la lista */
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin-right: 15px; /* Espacio entre los ítems */
+  }
+  
+  .ms-auto {
+    margin-left: auto; /* Empuja los elementos del login/logout hacia el final */
+  }
+  

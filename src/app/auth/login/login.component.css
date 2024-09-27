@@ -1,3 +1,14 @@
 form {
     margin: 35px;
 }
+
+.largo_formulario{
+    
+    width: 300px;
+}
+
+.caja1{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

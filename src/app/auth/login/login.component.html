@@ -1,44 +1,47 @@
-<form [formGroup]="loginForm">
+<div class = "caja1">
+
+<form [formGroup]="loginForm" class="largo_formulario" >
   <p class="text-danger">{{ loginError }}</p>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Usuario</label>
-    <input
-      formControlName="email"
-      
-      class="form-control"
-      id="exampleInputEmail1"
-      aria-describedby="emailHelp"
-    />
+    <div class="mb-3">
+     <b> <label for="exampleInputEmail1" class="form-label">Usuario</label> </b>
+      <input
+        formControlName="email"
+        
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
 
-    <div
-      *ngIf="email.invalid && (email.dirty || email.touched)"
-      class="alert alert-danger"
-    >
-      <div *ngIf="email.errors?.['required']">Email is required.</div>
-      <div *ngIf="email.errors?.['email']">
-        El Email Debe Contener un Formato Valido.
+      <div
+        *ngIf="email.invalid && (email.dirty || email.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="email.errors?.['required']">Email is required.</div>
+        <div *ngIf="email.errors?.['email']">
+          El Email Debe Contener un Formato Valido.
+        </div>
       </div>
     </div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-    <input
-      formControlName="password"
-      type="password"
-      class="form-control"
-      id="exampleInputPassword1"
-    />
-    <div
-      *ngIf="password.invalid && (password.dirty || password.touched)"
-      class="alert alert-danger"
-    >
-      <div *ngIf="password.errors?.['required']">
-        La Contraseña Es Requerida.
+    <div class="mb-3">
+     <b> <label for="exampleInputPassword1" class="form-label">Contraseña</label> </b>
+      <input
+        formControlName="password"
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+      />
+      <div
+        *ngIf="password.invalid && (password.dirty || password.touched)"
+        class="alert alert-danger"
+      >
+        <div *ngIf="password.errors?.['required']">
+          La Contraseña Es Requerida.
+        </div>
       </div>
     </div>
-  </div>
 
-  <button type="submit" class="btn btn-primary" (click)="login()">
-    Iniciar Sesion
-  </button>
+    <button type="submit" class="btn btn-primary" (click)="login()">
+      Iniciar Sesion
+    </button>
 </form>
+</div>

@@ -1,18 +1,35 @@
-
-<div class="lupa" >
-    <input class="lupaa" type="text" [(ngModel)]="searchText" placeholder=" Buscar producto. . ." />
+<div class="lupa">
+  <input
+    class="lupaa"
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder=" Buscar producto. . ."
+  />
 </div>
 
 <div class="productos">
-    
-    
-
-    <div class="cards" *ngFor="let user of productsData | filter:searchText">
-        <div class="imagen">
-            <img src="https://www.oreo-la.com/images/release/products/Jea7pHdCXozWtQlRyLtADuo565rb9m11037SZMLK.png?v=ok" alt="">
-        </div>
-        <p><b>Name : </b> <span>{{ user?.name }}</span></p>
-        <p><b>Precio : </b> <span>{{ user?.price }}</span></p>
-        <button class="boton">Comprar</button>
+  <div class="cards" *ngFor="let user of productsData | filter : searchText">
+    <div class="imagen">
+      <img
+        src="https://www.oreo-la.com/images/release/products/Jea7pHdCXozWtQlRyLtADuo565rb9m11037SZMLK.png?v=ok"
+        alt=""
+      />
     </div>
+    <p>
+      <b>Name : </b> <span>{{ user?.name }}</span>
+    </p>
+    <p>
+      <b>Precio : </b> <span>{{ user?.price }}</span>
+    </p>
+    <button class="boton">Comprar</button>
+  </div>
+</div>
+
+<div class="somos" width="95%">
+  <div class="content">
+    <p>¿Quiénes Somos?
+        En Angel's Natural, creemos en el poder de la naturaleza para cuidar y proteger lo más valioso: tu bienestar. Somos una empresa dedicada a crear productos naturales de alta calidad, diseñados para mejorar la vida de las personas de manera saludable y sostenible.
+        
+        Nuestra misión es proporcionar soluciones que respeten el equilibrio de la naturaleza, utilizando ingredientes 100% naturales, cuidadosamente seleccionados por sus propiedades beneficiosas para el cuerpo y la mente. Cada producto de Angel's Natural está elaborado con amor, compromiso y la pasión por brindar un cuidado natural y efectivo.</p>
+  </div>
 </div>

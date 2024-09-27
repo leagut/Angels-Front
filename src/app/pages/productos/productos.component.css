@@ -50,3 +50,51 @@
     padding: 5px;
     border: 3px solid #FBA83C;
 }
+
+
+.somos{
+    display: flex;
+    
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.imagefarma{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+.somos {
+    background-image: url('../../../assets/farmacia.png');
+    background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+    background-position: center; /* Centra la imagen */
+    width: 100%; /* Ajusta el ancho */
+    height: 300px; /* Ajusta la altura según lo que necesites */
+    position: relative; /* Necesario para colocar el texto encima */
+    margin-top: 80px; /* Agrega el espacio que necesitas arriba */
+    padding-bottom: 180px; /* Puedes mantener el padding-bottom si lo necesitas */
+    overflow-y: scroll;
+  }
+  
+  
+  .somos .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    color: white; /* Cambia el color del texto */
+    text-align: center;
+    font-size: 20px; /* Tamaño del texto */
+    
+   
+  }
+
+  .somos .content  {
+    font-size: 15px;
+    width: 90%;
+    color: rgb(255, 255, 255);
+    padding-top: 150px;
+   
+}

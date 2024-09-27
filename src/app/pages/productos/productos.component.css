@@ -67,14 +67,14 @@
 
 
 .somos {
-    background-image: url('../../../assets/farmacia.png');
+    background-image: url('../../../assets/Farmacia2.png');
     background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
     background-position: center; /* Centra la imagen */
     width: 100%; /* Ajusta el ancho */
     height: 300px; /* Ajusta la altura según lo que necesites */
     position: relative; /* Necesario para colocar el texto encima */
     margin-top: 80px; /* Agrega el espacio que necesitas arriba */
-    padding-bottom: 180px; /* Puedes mantener el padding-bottom si lo necesitas */
+    padding-bottom: 150px; /* Puedes mantener el padding-bottom si lo necesitas */
     overflow-y: scroll;
   }
   
@@ -94,7 +94,18 @@
   .somos .content  {
     font-size: 15px;
     width: 90%;
-    color: rgb(255, 255, 255);
-    padding-top: 150px;
+    color: rgb(21, 21, 21);
+    padding-top: 100px;
    
+}
+
+.somos .content p  {
+    padding-top: 80px;
+   
+    padding-bottom: 50px;
+}
+
+.tercero{
+    width: 100%; /* Ajusta el ancho */
+    height: 70px;
 }

@@ -1,0 +1,61 @@
+.identificador{
+    display: flex;    
+    justify-content: end;
+    padding-right: 20px;
+    padding-top: 10px;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    color: rgb(94, 180, 255);
+}
+
+
+.productos{
+        padding-top: 100px;
+}
+
+.lista{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+th, td {
+    padding: 10px 20px; /* 10px de espacio vertical, 20px de espacio horizontal */
+    text-align: left;
+    border: 2px solid #16c5ff;
+    border-radius: 3px;
+}
+
+
+
+
+td:last-child {
+    display: flex;
+    justify-content: flex-start; /* Coloca los botones en línea, comenzando desde la izquierda */
+    align-items: flex-end; /* Alinea los botones en la parte inferior */
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 0 10px 0 0; /* Espacio derecho de 10px entre los botones */
+  }
+  
+  .btn-editar {
+    background-color: #03080a;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .btn-desactivar {
+    background-color: #ffc721;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }

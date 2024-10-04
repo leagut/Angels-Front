@@ -14,5 +14,9 @@ export class ProductsService {
     return this.http.get<any>(`${environment.urlHost}products/all`)
   }
 
+  getAllProductsFilter():Observable<any>{
+    return this.http.get<any>(`${environment.urlHost}products/allfilter`)
+  }
+
 
 }

@@ -22,7 +22,7 @@
 th, td {
     padding: 10px 20px; /* 10px de espacio vertical, 20px de espacio horizontal */
     text-align: left;
-    border: 2px solid #16c5ff;
+    border: 2px solid #ffce1f;
     border-radius: 3px;
 }
 
@@ -58,4 +58,12 @@ td:last-child {
   
   button:hover {
     opacity: 0.8;
+  }
+
+  .dominio{
+    background-color: #0d1113;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
   }

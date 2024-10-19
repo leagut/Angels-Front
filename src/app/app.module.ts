@@ -15,7 +15,13 @@ import { UsersComponent } from './pages/users/users/users.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { FilterPipe } from './filter.pipe';
 import { AdminComponent } from './pages/admin/admin.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditarProductoModalComponent } from './modulos/editar-producto-modal/editar-producto-modal.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,14 +33,22 @@ import { AdminComponent } from './pages/admin/admin.component';
     UsersComponent,
     ProductosComponent,
     FilterPipe,
-    AdminComponent
+    AdminComponent,
+    EditarProductoModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule      
+    
 
   ],
   providers: [

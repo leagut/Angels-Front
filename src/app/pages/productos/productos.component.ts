@@ -28,7 +28,7 @@ export class ProductosComponent implements OnInit {
       }
     })
 
-    throw new Error('Method not implemented.');
+  //  throw new Error('Method not implemented.');
   }
 
 

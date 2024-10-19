@@ -28,9 +28,10 @@
                     <td>{{ producto.price | currency }}</td>
                     <td>{{ producto.stock }}</td>
                     <td>{{ producto.active ? 'Sí' : 'No' }}</td>
-                    <td>
-                      <button class="btn-editar">Editar</button>
-                      <button class="btn-desactivar">Desactiva</button>
+                    <td>                      
+                      <button class="btn-editar" (click)="editarProducto(producto)">Editar</button>
+                      <button class="btn-desactivar" (click)="onoff(producto)" >{{ producto.active ? 'Desactivar' : 'Activar' }}</button>
+
                     </td>
                   </tr>
               </tbody>

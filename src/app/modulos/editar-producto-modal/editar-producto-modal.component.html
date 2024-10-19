@@ -1,0 +1,26 @@
+<h2>Editar Producto</h2>
+<form [formGroup]="editarForm" (ngSubmit)="onSubmit()">
+
+  <mat-form-field>
+    <input matInput placeholder="Id" formControlName="Id" readonly >
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Nombre" formControlName="nombre">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <input matInput placeholder="Precio" formControlName="precio">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="Stock" formControlName="stock">
+  </mat-form-field>
+
+ 
+
+  <div class="button-container">
+    <button type="submit" mat-raised-button color="primary">Guardar</button>
+    <button type="button" mat-raised-button (click)="close()">Cancelar</button>
+  </div>
+</form>

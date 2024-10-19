@@ -18,5 +18,12 @@ export class ProductsService {
     return this.http.get<any>(`${environment.urlHost}products/allfilter`)
   }
 
+  updateProduct(product: any): Observable<any> {
+    return this.http.put(`${environment.urlHost}products/edit/${product.id}`, product);
+  }
+
+  updateProductActive(productId: number, active: boolean): Observable<any> {
+    return this.http.put(`${environment.urlHost}products/edit/${productId}`, { active });
+  }
 
 }

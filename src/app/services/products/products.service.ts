@@ -23,7 +23,9 @@ export class ProductsService {
   }
 
   updateProductActive(productId: number, active: boolean): Observable<any> {
-    return this.http.put(`${environment.urlHost}products/edit/${productId}`, { active });
+    console.log(productId,active);
+    
+    return this.http.put(`${environment.urlHost}products/edit/active/${productId}`, { active });
   }
 
 }

@@ -71,10 +71,16 @@ export class AdminComponent implements OnInit {
 
 
   onoff(producto: any) {
+    console.log("xzdf",producto);
+    
     const nuevoEstado = !producto.active;  // Invertimos el estado actual de active
-  
+    
+    console.log(nuevoEstado);
+    
+    console.log(producto.productId);
+    
     // Llamamos al servicio para actualizar el estado en el backend
-    this.ProductService.updateProductActive(producto.id, nuevoEstado).subscribe({
+    this.ProductService.updateProductActive(producto.productId, nuevoEstado).subscribe({
       next: (response) => {
         // Actualizamos el estado en el frontend para reflejar el cambio
         producto.active = nuevoEstado;

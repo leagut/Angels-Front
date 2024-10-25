@@ -1,69 +1,101 @@
-.identificador{
-    display: flex;    
-    justify-content: end;
-    padding-right: 20px;
-    padding-top: 10px;
-    align-items: center;
-    background-color: rgb(0, 0, 0);
-    color: rgb(94, 180, 255);
+.identificador {
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+  padding-top: 10px;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  color: rgb(212, 148, 21);
+  width: 100%;
 }
 
-
-.productos{
-        padding-top: 100px;
+.contain {
+  border: #ffc721 1px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Asegura que el contenido esté centrado */
+  overflow-x: auto; /* Mantiene el scroll horizontal si es necesario */
+  width: 100%;
 }
 
-.lista{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.productos {
+  padding-top: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Asegura que el contenedor se centre horizontalmente */
 }
 
-th, td {
-    padding: 10px 20px; /* 10px de espacio vertical, 20px de espacio horizontal */
-    text-align: left;
-    border: 2px solid #ffce1f;
-    border-radius: 3px;
+.lista {
+  width: 100%;
+  overflow-x: auto; /* Habilitar el scroll horizontal si es necesario */
 }
 
-
-
+table {
+  table-layout: fixed; /* Mantiene las columnas fijas */
+  border-collapse: collapse; /* Quita espacios entre celdas */
+  min-width: 800px; /* Ancho mínimo de la tabla */
+  max-width: 1000px; /* Ancho máximo de la tabla */
+  width: 800px; /* Ancho fijo para evitar que se ajuste al 100% */
+  margin: auto; /* Centra la tabla horizontalmente */
+}
 
 td:last-child {
-    display: flex;
-    justify-content: flex-start; /* Coloca los botones en línea, comenzando desde la izquierda */
-    align-items: flex-end; /* Alinea los botones en la parte inferior */
-  }
-  
-  button {
-    padding: 5px 10px;
-    margin: 0 10px 0 0; /* Espacio derecho de 10px entre los botones */
-  }
-  
-  .btn-editar {
-    background-color: #03080a;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .btn-desactivar {
-    background-color: #ffc721;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
 
-  .dominio{
-    background-color: #0d1113;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: aliceblue;
-  }
+button {
+  padding: 5px 10px;
+  margin: 0 10px 0 0;
+}
+
+.btn-editar {
+  background-color: #03080a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 45%;
+}
+
+
+
+.btn-desactivar {
+  background-color: #ffb012;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  min-width: 120px; /* Establece un ancho mínimo suficiente para ambos textos */
+  padding: 5px 10px; /* Espacio interno para mantener buena apariencia */
+  text-align: center; /* Asegura que el texto esté centrado */
+  white-space: nowrap; /* Evita que el texto haga salto de línea */
+}
+
+
+.mas{
+  padding-top: 100px;
+  background-color: rgb(255, 255, 255);
+}
+
+.mass{
+  background-color: rgb(255, 165, 76);
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(0, 0, 0);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.dominio {
+  background-color: #0d1113;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: aliceblue;
+  border-radius: 5px;
+  width: 188px;
+}

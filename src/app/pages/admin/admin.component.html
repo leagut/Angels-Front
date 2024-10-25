@@ -1,43 +1,42 @@
-
-<div class="identificador" >
-    <p> Bienvenido   <b>  {{name}} </b> </p> 
-</div>
-
-<div class="productos">
+<div class="contain">
+  <div class="identificador">
+    <p>
+      Bienvenido <b> {{ name }} </b>
+    </p>
+  </div>
+  <div class="mas" > <button class="mass"> <b>Add</b>  </button>  </div>
+  <div class="productos">
     
-    <div class="lista"  >
-        
-        <table>
-            <!-- Cabecera de la tabla -->
-            <thead>
-              <tr>
-                <th>Id</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Stock</th>
-                <th>Activo</th>
-                <th class="dominio">Productos</th>                
-              </tr>
-            </thead>
-    
-            <tbody>
-                <!-- Aquí usamos *ngFor para recorrer la lista de productos -->
-                <tr *ngFor="let producto of productsData">
-                    <td>{{ producto.productId }}</td>
-                    <td>{{ producto.name }}</td>
-                    <td>{{ producto.price | currency }}</td>
-                    <td>{{ producto.stock }}</td>
-                    <td>{{ producto.active ? 'Sí' : 'No' }}</td>
-                    <td>                      
-                      <button class="btn-editar" (click)="editarProducto(producto)">Editar</button>
-                      <button class="btn-desactivar" (click)="onoff(producto)" >{{ producto.active ? 'Desactivar' : 'Activar' }}</button>
-
-                    </td>
-                  </tr>
-              </tbody>
-            </table>    
-    
-        
+    <div class="lista">
+      <table>
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Activo</th>
+            <th class="dominio">Productos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let producto of productsData">
+            <td>{{ producto.productId }}</td>
+            <td>{{ producto.name }}</td>
+            <td>{{ producto.price | currency }}</td>
+            <td>{{ producto.stock }}</td>
+            <td>{{ producto.active ? "Sí" : "No" }}</td>
+            <td>
+              <button class="btn-editar" (click)="editarProducto(producto)">
+                Editar
+              </button>
+              <button class="btn-desactivar" (click)="onoff(producto)">
+                {{ producto.active ? "Desactivar" : "Activar" }}
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
 </div>
-

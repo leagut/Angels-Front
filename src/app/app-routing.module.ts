@@ -6,6 +6,7 @@ import { UsersComponent } from './pages/users/users/users.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { BarraComponent } from './shared/barra/barra.component';
+import { CategoriaComponent } from './pages/categoria/categoria.component';
 
 const routes: Routes = [
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path: 'users', component: UsersComponent},  
   {path: 'barra', component: BarraComponent,
     children: [
-      { path: 'admin', component: AdminComponent }
+      { path: 'admin', component: AdminComponent },
+      { path: 'categoria', component: CategoriaComponent }
     ]
   }
   

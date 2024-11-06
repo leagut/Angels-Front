@@ -23,6 +23,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BarraComponent } from './shared/barra/barra.component';
+import { CategoriaComponent } from './pages/categoria/categoria.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { BarraComponent } from './shared/barra/barra.component';
     FilterPipe,
     AdminComponent,
     EditarProductoModalComponent,
-    BarraComponent
+    BarraComponent,
+    CategoriaComponent
   ],
   imports: [
     BrowserModule,

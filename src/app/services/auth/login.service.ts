@@ -38,7 +38,7 @@ export class LoginService {
         this.currentUserData.next(user.jwt); // Actualiza el valor de currentUserData con el JWT
         this.currentUserLoginOn.next(true); // Marca al usuario como autenticado
         console.log(user);
-        this.route.navigateByUrl('admin');        
+        this.route.navigateByUrl('barra/admin');        
       }),
       map((user: User) => user.jwt), // Extrae el JWT de la respuesta
       catchError(this.handleError) // Maneja cualquier error

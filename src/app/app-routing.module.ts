@@ -5,6 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { UsersComponent } from './pages/users/users/users.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { BarraComponent } from './shared/barra/barra.component';
 
 const routes: Routes = [
 
@@ -12,8 +13,12 @@ const routes: Routes = [
   {path: 'productos' , component:ProductosComponent},
   {path:'inicio',component:DashboardComponent},
   {path:'iniciar-sesion',component:LoginComponent},
-  {path: 'users', component: UsersComponent},
-  {path: 'admin', component: AdminComponent}
+  {path: 'users', component: UsersComponent},  
+  {path: 'barra', component: BarraComponent,
+    children: [
+      { path: 'admin', component: AdminComponent }
+    ]
+  }
   
 
 

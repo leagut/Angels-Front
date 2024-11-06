@@ -9,7 +9,7 @@
       <!-- Contenedor de los items con flexbox -->
       <ul class="navbar-nav w-100 d-flex abajo ">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/productos">Productos</a> 
+          <a class="nav-link active" routerLink="/productos">Galeria</a> 
         </li>
 
         <!-- Los elementos de login/logout se agrupan en un div para empujarlos al final -->
@@ -23,7 +23,7 @@
 
 
           <li class="nav-item" *ngIf="userLoginOn && !isCurrentRoute('/admin')">
-            <a class="nav-link" routerLink="/admin">
+            <a class="nav-link" routerLink="/barra/admin">
               <img src="../../../assets/flecha.png" alt="" width="35px"  >
             </a>
           </li>

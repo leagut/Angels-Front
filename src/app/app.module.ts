@@ -24,6 +24,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BarraComponent } from './shared/barra/barra.component';
 import { CategoriaComponent } from './pages/categoria/categoria.component';
+import { AddproductComponent } from './modulos/addproduct/addproduct.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +44,8 @@ import { CategoriaComponent } from './pages/categoria/categoria.component';
     AdminComponent,
     EditarProductoModalComponent,
     BarraComponent,
-    CategoriaComponent
+    CategoriaComponent,
+    AddproductComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +58,10 @@ import { CategoriaComponent } from './pages/categoria/categoria.component';
     MatInputModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    MatSlideToggleModule      
+    MatSlideToggleModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatCheckboxModule      
     
 
   ],

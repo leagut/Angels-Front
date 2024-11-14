@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AddproductComponent } from 'src/app/modulos/addproduct/addproduct.component';
 import { EditarProductoModalComponent } from 'src/app/modulos/editar-producto-modal/editar-producto-modal.component';
 import { ProductsService } from 'src/app/services/products/products.service';
 
@@ -38,11 +39,26 @@ export class AdminComponent implements OnInit {
    // throw new Error('Method not implemented.');
   }
 
+
+  openProductModal(): void {
+    const dialogRef = this.dialog.open(AddproductComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Datos del producto:', result);
+        // Aquí puedes procesar el resultado o enviar los datos a un servicio
+      }
+    });
+  }
+
+
+
+
   editarProducto(producto: any) {
     const dialogRef = this.dialog.open(EditarProductoModalComponent, {
       width: '320px',
       data: { nombre: producto.name, precio: producto.price, stock: producto.stock, Id : producto.productId } // Asegúrate de que los nombres coincidan con los usados en el modal
-    });
+    });   
 
 
     dialogRef.afterClosed().subscribe(result => {

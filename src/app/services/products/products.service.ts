@@ -28,4 +28,14 @@ export class ProductsService {
     return this.http.put(`${environment.urlHost}products/edit/active/${productId}`, { active });
   }
 
+
+
+  addProduct(product: any): Observable<any> {
+    return this.http.post(`${environment.urlHost}products/save`, product);
+  }
+
+
+
+
+
 }

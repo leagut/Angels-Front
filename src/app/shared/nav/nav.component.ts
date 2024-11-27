@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { LoginService } from 'src/app/services/auth/login.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-nav',
@@ -11,7 +12,9 @@ import { LoginService } from 'src/app/services/auth/login.service';
 export class NavComponent implements OnInit, OnDestroy {
   userLoginOn:boolean=false;
   currentUrl: string = '';
-  constructor(private loginService:LoginService,private router: Router) { }
+  totalItems: number = 0;
+
+  constructor(private loginService:LoginService,private router: Router,private cartService: CartService) { }
 
 
   ngOnDestroy(): void {
@@ -33,8 +36,13 @@ export class NavComponent implements OnInit, OnDestroy {
       this.currentUrl = event.url;
     });
 
+    this.totalItems = this.cartService.getTotalItems();
 
 
+  }
+
+  ngDoCheck() {
+    this.totalItems = this.cartService.getTotalItems();
   }
 
   isCurrentRoute(route: string): boolean {

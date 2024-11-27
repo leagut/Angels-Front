@@ -8,7 +8,7 @@
 </div>
 
 <div class="productos">
-  <div class="cards" *ngFor="let user of productsData | filter : searchText">
+  <div class="cards" *ngFor="let product of productsData | filter : searchText">
     <div class="imagen">
       <img
         src="https://www.oreo-la.com/images/release/products/Jea7pHdCXozWtQlRyLtADuo565rb9m11037SZMLK.png?v=ok"
@@ -16,12 +16,12 @@
       />
     </div>
     <p>
-      <b>Name : </b> <span>{{ user?.name }}</span>
+      <b>Nombre: </b> <span>{{ product?.name }}</span>
     </p>
     <p>
-      <b>Precio : </b> <span>{{ user?.price }}</span>
+      <b>Precio: </b> <span>{{ product?.price }}</span>
     </p>
-    <button class="boton">Comprar</button>
+    <button class="boton" (click)="addToCart(product)">Comprar</button>
   </div>
 </div>
 

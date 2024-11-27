@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products/products.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-productos',
@@ -8,7 +9,7 @@ import { ProductsService } from '../../services/products/products.service';
 })
 export class ProductosComponent implements OnInit {
 
-  constructor(private  ProductService : ProductsService  ){}
+  constructor(private  ProductService : ProductsService , private cartService: CartService ){}
 
   productsData:Array<any>=[];
   searchText: string = ''; 
@@ -29,6 +30,11 @@ export class ProductosComponent implements OnInit {
     })
 
   //  throw new Error('Method not implemented.');
+  }
+
+  addToCart(product: any) {
+    this.cartService.addItem(product);
+    console.log('Producto agregado al carrito:', product);
   }
 
 

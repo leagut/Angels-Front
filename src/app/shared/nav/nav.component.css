@@ -5,7 +5,8 @@
   }
   
   .nav-item {
-    margin-right: 15px; /* Espacio entre los ítems */
+    position: relative;  /* Añadir posición relativa para el z-index */
+    z-index: 10;  /* Asegúrate de que esté encima de otros elementos */
   }
   
   .ms-auto {
@@ -38,4 +39,55 @@
     color: #ffffff;
     font-weight: bold;
     font-size: 1.2em;
+  }
+
+
+
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegúrate de que el modal esté sobre todo */
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    z-index: 1001; /* Asegura que el contenido esté encima del fondo */
+  }
+
+  .nav-item {
+    cursor: pointer;  /* Cambia el cursor cuando pases sobre el carrito */
+  }
+
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
   }

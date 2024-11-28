@@ -27,23 +27,31 @@
               <img src="../../../assets/flecha.png" alt="" width="35px"  >
             </a>
           </li>
+
+
           
-          <li class="nav-item">
-            <a class="nav-link"  class="link-wrapper">
+          <li class="nav-item" (click)="openModal()">
+            <a class="nav-link link-wrapper">
               <div class="image-wrapper">
                 <img src="../../../assets/bolsa.webp" alt="" width="35px">
                 <span class="number">{{ totalItems }}</span>
               </div>
             </a>
           </li>
+          
+          <app-car [showModal]="showModal" (close)="closeModal()"></app-car>
+          
+        
 
-
-
-          <li class="nav-item" *ngIf="userLoginOn" (click)="logout()">
+          <li class="nav-item" *ngIf="userLoginOn" (click)="openModal()">
             <a class="nav-link" routerLink="/productos">
               <img src="../../../assets/Cabierto.JPG" alt="" width="25px" height="35px" >
             </a>
           </li>
+          
+          <app-car *ngIf="showModal" (close)="closeModal()"></app-car>
+
+
         </div>
       </ul>
     </div>

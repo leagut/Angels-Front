@@ -1,6 +1,8 @@
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
+
 import { LoginService } from 'src/app/services/auth/login.service';
 import { CartService } from 'src/app/services/cart/cart.service';
 
@@ -13,6 +15,7 @@ export class NavComponent implements OnInit, OnDestroy {
   userLoginOn:boolean=false;
   currentUrl: string = '';
   totalItems: number = 0;
+  showModal: boolean = false; // Control del modal
 
   constructor(private loginService:LoginService,private router: Router,private cartService: CartService) { }
 
@@ -48,6 +51,19 @@ export class NavComponent implements OnInit, OnDestroy {
   isCurrentRoute(route: string): boolean {
     return this.currentUrl === route;
   }
+
+  openModal(): void {
+    this.showModal = true;
+    console.log('abrio el modal');
+    
+  }
+
+  closeModal(): void {
+    this.showModal = false;
+    console.log('cerrando...');
+    
+  }
+
 
  
   logout() {

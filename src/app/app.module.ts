@@ -28,6 +28,8 @@ import { AddproductComponent } from './modulos/addproduct/addproduct.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { CarComponent } from './modulos/car/car.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     EditarProductoModalComponent,
     BarraComponent,
     CategoriaComponent,
-    AddproductComponent
+    AddproductComponent,
+    CarComponent
   ],
   imports: [
     BrowserModule,
@@ -61,8 +64,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatSlideToggleModule,
     MatSelectModule,
     MatOptionModule,
-    MatCheckboxModule      
-    
+    MatCheckboxModule,      
+    CommonModule 
 
   ],
   providers: [

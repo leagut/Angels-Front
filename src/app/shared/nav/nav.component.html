@@ -43,13 +43,13 @@
           
         
 
-          <li class="nav-item" *ngIf="userLoginOn" (click)="openModal()">
+          <li class="nav-item" *ngIf="userLoginOn" (click)="logout()">
             <a class="nav-link" routerLink="/productos">
               <img src="../../../assets/Cabierto.JPG" alt="" width="25px" height="35px" >
             </a>
           </li>
           
-          <app-car *ngIf="showModal" (close)="closeModal()"></app-car>
+          
 
 
         </div>

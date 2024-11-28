@@ -1,35 +1,39 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from 'src/app/services/cart/cart.service';
+import { Subscription } from 'rxjs';  // Importar Subscription
 
 @Component({
   selector: 'app-car',
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
-export class CarComponent implements OnChanges {
+export class CarComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<void>();
   @Input() showModal: boolean = false;
   cartItems: any[] = [];
- 
-  constructor(private cartService: CartService) {
-    console.log('Constructor de CarComponent llamado');
-  }
+  private cartSubscription: Subscription = new Subscription();  // Para gestionar la suscripción
+
+  constructor(private cartService: CartService) {}
 
   ngOnInit() {
-    this.cartItems = this.cartService.getItems(); 
-    console.log('NgOnInit de CarComponent');
-    console.log('Estado del modal:', this.showModal);
+    this.cartSubscription = this.cartService.getItems().subscribe(items => {
+      this.cartItems = items;  // Actualizar la lista de productos cuando cambie
+    });
   }
 
   ngOnChanges() {
-    console.log('NgOnChanges de CarComponent');
     console.log('Estado del modal:', this.showModal);
   }
 
+  ngOnDestroy() {
+    this.cartSubscription.unsubscribe();  // Limpiar la suscripción
+  }
+
   closeModal() {
-    console.log('Método closeModal en CarComponent llamado');
     this.close.emit();
   }
 
-
+  removeProduct(product: any) {
+    this.cartService.removeItem(product);
+  }
 }

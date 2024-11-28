@@ -1,34 +1,49 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';  // Importar BehaviorSubject
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  private cartItems: any[] = []; // Arreglo de productos en el carrito
-  private cartItemsSubject = new BehaviorSubject<any[]>(this.cartItems); // BehaviorSubject
+  private cartItems: any[] = [];  // Aquí guardamos los productos del carrito
+  private cartItemsSubject = new BehaviorSubject<any[]>(this.cartItems); // Creamos un BehaviorSubject para emitir los cambios
 
+  // Método para obtener los productos del carrito
   getItems() {
-    return this.cartItemsSubject.asObservable(); // Retorna el observable
+    return this.cartItemsSubject.asObservable();  // Retornamos un observable para suscribirnos a los cambios
   }
 
+  // Método para agregar un producto al carrito
   addItem(product: any) {
     this.cartItems.push(product);
-    this.cartItemsSubject.next(this.cartItems);  // Emitir el nuevo estado
+    this.cartItemsSubject.next(this.cartItems);  // Emitimos el nuevo estado del carrito
   }
 
-  reset() {
-    this.cartItems = [];
-    this.cartItemsSubject.next(this.cartItems);  // Emitir el nuevo estado
+  // Método para eliminar un producto del carrito
+  removeItem(product: any) {
+    console.log('Productos antes de eliminar:', this.cartItems);
+    console.log('Producto a eliminar:', product);
+  
+    // Encontrar el índice del primer producto con el productId coincidente
+    const index = this.cartItems.findIndex(item => item.productId === product.productId);
+  
+    if (index !== -1) {
+      // Eliminar solo el primer producto que coincida
+      this.cartItems.splice(index, 1);
+    }
+  
+    console.log('Productos después de eliminar:', this.cartItems);
+    this.cartItemsSubject.next(this.cartItems);
   }
-
+  // Método para obtener el total de productos en el carrito
   getTotalItems() {
     return this.cartItems.length;
   }
 
-  removeItem(product: any) {
-    this.cartItems = this.cartItems.filter(item => item.id !== product.id);
-    this.cartItemsSubject.next(this.cartItems);  // Emitir el nuevo estado
+  // Método para reiniciar el carrito (vaciarlo)
+  reset() {
+    this.cartItems = [];
+    this.cartItemsSubject.next(this.cartItems);  // Emitimos el nuevo estado (vacío)
   }
 
   constructor() { }

@@ -9,7 +9,7 @@
             <span>{{ item.price | currency:'USD':'symbol':'1.0-0' }}</span>
             <div class="botones">
               
-              <button>x</button>
+              <button (click)="removeProduct(item)" >x</button>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from 'src/app/services/cart/cart.service';
-import { Subscription } from 'rxjs';  // Importar Subscription
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-car',
@@ -11,13 +11,14 @@ export class CarComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<void>();
   @Input() showModal: boolean = false;
   cartItems: any[] = [];
-  private cartSubscription: Subscription = new Subscription();  // Para gestionar la suscripción
+  private cartSubscription: Subscription = new Subscription();
 
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
+    // Nos suscribimos al carrito para recibir actualizaciones en tiempo real
     this.cartSubscription = this.cartService.getItems().subscribe(items => {
-      this.cartItems = items;  // Actualizar la lista de productos cuando cambie
+      this.cartItems = items;
     });
   }
 
@@ -26,14 +27,15 @@ export class CarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.cartSubscription.unsubscribe();  // Limpiar la suscripción
+    this.cartSubscription.unsubscribe();
   }
 
   closeModal() {
     this.close.emit();
   }
 
+  // Método para eliminar un producto del carrito
   removeProduct(product: any) {
-    this.cartService.removeItem(product);
+    this.cartService.removeItem(product);  // Llamamos al servicio para eliminar el producto
   }
 }

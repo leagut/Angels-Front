@@ -1,25 +1,54 @@
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .modal-content {
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 8px;
-    width: 70%;
-    max-width: 500px;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
 
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 70%;
+  max-width: 500px;
+}
 
-  .caja{
-    display: flex;
-    justify-content: space-between;
-  }
+.modal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.modal-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.caja {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.c_one {
+  flex: 2;
+  text-align: left;
+}
+
+.c_dos {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.botones button {
+  margin-left: 5px;
+  padding: 5px 10px;
+}

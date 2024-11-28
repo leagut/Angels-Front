@@ -22,5 +22,9 @@ export class CartService {
     return this.cartItems.length;
   }
 
+  removeItem(product: any) {
+    this.cartItems = this.cartItems.filter(item => item.id !== product.id);
+  }
+
   constructor() { }
 }

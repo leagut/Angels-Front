@@ -14,6 +14,10 @@ export class CartService {
     this.cartItems.push(product);
   }
 
+  reset() {
+    this.cartItems = [];
+  }
+
   getTotalItems() {
     return this.cartItems.length;
   }

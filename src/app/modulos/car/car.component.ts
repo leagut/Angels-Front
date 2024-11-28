@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 @Component({
   selector: 'app-car',
@@ -8,13 +9,14 @@ import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core
 export class CarComponent implements OnChanges {
   @Output() close = new EventEmitter<void>();
   @Input() showModal: boolean = false;
-
+  cartItems: any[] = [];
  
-  constructor() {
+  constructor(private cartService: CartService) {
     console.log('Constructor de CarComponent llamado');
   }
 
   ngOnInit() {
+    this.cartItems = this.cartService.getItems(); 
     console.log('NgOnInit de CarComponent');
     console.log('Estado del modal:', this.showModal);
   }

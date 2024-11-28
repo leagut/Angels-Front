@@ -1,10 +1,14 @@
 <div class="modal" *ngIf="showModal">
-    <div class="modal-content">
-      <h2>Carrito de compras</h2>
-      <ul>
-        <!-- Aquí puedes recorrer los productos del carrito -->
-        ddasedfsaddddddddddddddddddddddddddddddddddddddddd
-      </ul>
-      <button (click)="closeModal()">Cerrar</button>
-    </div>
+  <div class="modal-content">
+    <h2>Carrito de compras</h2>
+    <ul>
+      <li *ngFor="let item of cartItems">
+        <div class="caja">
+          <div class="c_one">{{ item.name }}</div> <div class="c_dos"> <div>{{ item.price | currency:'USD':'symbol' }} </div> <div><button>+</button><button>-</button></div>  </div>
+        </div>
+          
+      </li>
+    </ul>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
 </div>

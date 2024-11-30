@@ -11,6 +11,10 @@ export class CarComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<void>();
   @Input() showModal: boolean = false;
   cartItems: any[] = [];
+  totalSuma: number = 0;
+
+  
+
   private cartSubscription: Subscription = new Subscription();
 
   constructor(private cartService: CartService) {}
@@ -19,7 +23,9 @@ export class CarComponent implements OnInit, OnDestroy {
     // Nos suscribimos al carrito para recibir actualizaciones en tiempo real
     this.cartSubscription = this.cartService.getItems().subscribe(items => {
       this.cartItems = items;
+      this.actualizarSuma();
     });
+    
   }
 
   ngOnChanges() {
@@ -37,5 +43,10 @@ export class CarComponent implements OnInit, OnDestroy {
   // Método para eliminar un producto del carrito
   removeProduct(product: any) {
     this.cartService.removeItem(product);  // Llamamos al servicio para eliminar el producto
+    this.actualizarSuma();
+  }
+
+  actualizarSuma(): void {
+    this.totalSuma = this.cartItems.reduce((total, item) => total + item.price, 0);
   }
 }

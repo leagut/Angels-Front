@@ -21,8 +21,7 @@ export class CartService {
 
   // Método para eliminar un producto del carrito
   removeItem(product: any) {
-    console.log('Productos antes de eliminar:', this.cartItems);
-    console.log('Producto a eliminar:', product);
+   
   
     // Encontrar el índice del primer producto con el productId coincidente
     const index = this.cartItems.findIndex(item => item.productId === product.productId);
@@ -32,7 +31,7 @@ export class CartService {
       this.cartItems.splice(index, 1);
     }
   
-    console.log('Productos después de eliminar:', this.cartItems);
+    
     this.cartItemsSubject.next(this.cartItems);
   }
   // Método para obtener el total de productos en el carrito

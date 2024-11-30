@@ -3,6 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -16,6 +17,7 @@
   padding: 20px;
   border-radius: 8px;
   width: 70%;
+  min-width: 300px;
   max-width: 500px;
 }
 
@@ -51,4 +53,32 @@
 .botones button {
   margin-left: 5px;
   padding: 5px 10px;
+}
+
+
+.sumatoria{
+  display: flex;
+  padding-top: 20px;
+  margin-top: 15px;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-color: rgba(255, 179, 0, 0.738);
+
+}
+
+.tttt2{
+  padding-left: 50px;
+  margin-left: 100px;
+}
+
+.comprarbutton{
+  margin-bottom: 5px;
+}
+
+
+.cerrarbottton{
+  color: rgb(255, 255, 255);
+  background-color: rgba(210, 25, 25, 0.975);
 }

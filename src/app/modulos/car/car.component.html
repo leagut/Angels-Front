@@ -1,6 +1,7 @@
 <div class="modal" *ngIf="showModal">
+  
   <div class="modal-content">
-    <h2>Carrito de compras</h2>
+    <h2>Carrito de compras</h2> 
     <ul class="modal-list">
       <li *ngFor="let item of cartItems" class="modal-item">
         <div class="caja">
@@ -15,6 +16,13 @@
         </div>
       </li>
     </ul>
-    <button (click)="closeModal()">Cerrar</button>
+    <div class="sumatoria">
+      <div>Total</div> <div class="tttt2">{{totalSuma}}</div>
+    </div>
+    
+    <button class="comprarbutton" >Comprar</button>
+  
+    
   </div>
+  <button (click)="closeModal()" class="cerrarbottton" >x</button>
 </div>

@@ -75,10 +75,13 @@
 
 .comprarbutton{
   margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: rgba(87, 168, 7, 0.625);
 }
 
 
 .cerrarbottton{
   color: rgb(255, 255, 255);
   background-color: rgba(210, 25, 25, 0.975);
+  border-radius: 5px;
 }

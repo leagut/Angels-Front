@@ -19,8 +19,24 @@
     <div class="sumatoria">
       <div>Total</div> <div class="tttt2">{{totalSuma}}</div>
     </div>
+
+    <div class="cajott" >
+      <div class="input-group" class="botoninfo" >
+        <label for="direccion"></label>
+        <input id="direccion" type="text" [(ngModel)]="direccion"  placeholder="Ingresa tu dirección" class="prueba" >
+      </div>
+  
+      <div  class="botoninfo" >
+        <label for="telefono"></label>
+        <input id="telefono" type="text" [(ngModel)]="telefono" placeholder="Ingresa tu teléfono" maxlength="10" (keypress)="permitirSoloNumeros($event)"  class="prueba" >
+      </div>
+    </div>
+
     
-    <button class="comprarbutton" >Comprar</button>
+    
+    
+    <button class="comprarbutton" (click)="realizarCompra()" [disabled]="!camposValidos()" >Comprar</button>
+
   
     
   </div>

@@ -13,18 +13,22 @@
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
   width: 70%;
   min-width: 300px;
   max-width: 500px;
+  display: flex;
+  align-items: center;
+  border: 3px rgba(207, 153, 4, 0.938) solid;
 }
 
 .modal-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  width: 80%;
 }
 
 .modal-item {
@@ -65,7 +69,7 @@
   margin-bottom: 20px;
   border-radius: 5px;
   background-color: rgba(255, 179, 0, 0.738);
-
+  width:90% ;
 }
 
 .tttt2{
@@ -77,6 +81,10 @@
   margin-bottom: 5px;
   border-radius: 5px;
   background-color: rgba(87, 168, 7, 0.625);
+  color: #ffffff;
+  width: 50%;
+  margin-top: 5px;
+  padding: 2px;
 }
 
 
@@ -84,4 +92,25 @@
   color: rgb(255, 255, 255);
   background-color: rgba(210, 25, 25, 0.975);
   border-radius: 5px;
+  border: 2px solid white;
+}
+
+.botoninfo{
+  width: 100%;  
+  margin: 2px;
+}
+
+.prueba{
+  
+  width: 100%;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.cajott{
+  border: #ffffff 1px solid;
+  width: 70%;
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
 }

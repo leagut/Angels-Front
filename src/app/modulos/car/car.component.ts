@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit, OnDestroy } from '@angular/core';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { Subscription } from 'rxjs';
+import { ComprasService } from 'src/app/services/compras/compras.service';
 
 @Component({
   selector: 'app-car',
@@ -19,7 +20,7 @@ export class CarComponent implements OnInit, OnDestroy {
 
   private cartSubscription: Subscription = new Subscription();
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService , private comprasService: ComprasService ) {}
 
   ngOnInit() {
     // Nos suscribimos al carrito para recibir actualizaciones en tiempo real
@@ -68,8 +69,13 @@ export class CarComponent implements OnInit, OnDestroy {
   }
 
   realizarCompra(): void {
+    if (!this.camposValidos()) {
+      console.error('Los campos no son válidos');
+      return;
+    }
+  
     const numeroFactura = this.generarNumeroFactura();
-
+  
     const compra = {
       numeroFactura,
       direccion: this.direccion,
@@ -81,10 +87,24 @@ export class CarComponent implements OnInit, OnDestroy {
         price: item.price
       }))
     };
-
+  
     console.log('JSON para el backend:', compra);
+  
+    // Llamada al servicio para enviar la compra
+    this.comprasService.enviarCompra(compra).subscribe({
+      next: (response) => {
+        console.log('Compra registrada con éxito:', response);
+        // Aquí puedes agregar lógica adicional, como limpiar el formulario o mostrar un mensaje de éxito
+      },
+      error: (error) => {
+        console.error('Error al registrar la compra:', error);
+      }
+    });
 
   }
+
+
+
 
   camposValidos(): boolean {
     return this.direccion.trim().length > 0 && this.telefono.trim().length > 0;
@@ -96,5 +116,8 @@ export class CarComponent implements OnInit, OnDestroy {
       event.preventDefault();
     }
   }
+
+
+
 
 }

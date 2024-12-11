@@ -13,8 +13,8 @@ export class CarComponent implements OnInit, OnDestroy {
   @Input() showModal: boolean = false;
   cartItems: any[] = [];
   totalSuma: number = 0;
-  direccion: string = ''; // Propiedad para la dirección
-  telefono: string = '';  // Propiedad para el teléfono
+  direccion: string = ''; 
+  telefono: string = '';  
 
   
 
@@ -94,12 +94,22 @@ export class CarComponent implements OnInit, OnDestroy {
     this.comprasService.enviarCompra(compra).subscribe({
       next: (response) => {
         console.log('Compra registrada con éxito:', response);
+
         // Aquí puedes agregar lógica adicional, como limpiar el formulario o mostrar un mensaje de éxito
       },
       error: (error) => {
         console.error('Error al registrar la compra:', error);
       }
     });
+
+    this.cartItems = [];
+    this.totalSuma = 0;
+    this.direccion = ''; 
+    this.telefono='';  
+
+    this.cartService.reset();
+
+    this.closeModal();
 
   }
 

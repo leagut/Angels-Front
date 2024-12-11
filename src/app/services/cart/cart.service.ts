@@ -21,7 +21,7 @@ export class CartService {
 
   // Método para eliminar un producto del carrito
   removeItem(product: any) {
-   
+  
   
     // Encontrar el índice del primer producto con el productId coincidente
     const index = this.cartItems.findIndex(item => item.productId === product.productId);

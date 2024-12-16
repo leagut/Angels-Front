@@ -1,0 +1,66 @@
+.pedido-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #ff9e36e0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+  }
+  
+  .search-section {
+    margin-bottom: 20px;
+  }
+  
+  .search-section input {
+    padding: 10px;
+    margin-right: 10px;
+    width: calc(70% - 20px);
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size:medium;
+  }
+  
+  button:hover {
+    background: #039c0f;
+    font-size:medium;
+  }
+  
+  .error {
+    color: rgb(152, 12, 12);
+    margin-top: 10px;
+    font-size:medium;
+  }
+  
+  .pedido-form {
+    margin-top: 20px;
+  }
+  
+  .pedido-form div {
+    margin-bottom: 10px;
+  }
+  
+  .pedido-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #ffffff;
+  }
+  
+
+  .space{
+        height: 150px;
+        width: 20px;
+        
+  }

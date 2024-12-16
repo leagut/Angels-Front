@@ -1,1 +1,49 @@
-<p>categoria works!</p>
+<div class="pedido-container">
+    <h2>Buscar Pedido</h2>
+  
+    <!-- Botón para buscar el pedido -->
+    <div class="search-section">
+      <input
+        type="text"
+        [(ngModel)]="numeroFactura"
+        placeholder="Ingrese el número de factura"
+      />
+      <button (click)="buscarPedido()">Buscar Pedido</button>
+    </div>
+  
+    <!-- Mensajes de carga o error -->
+    <div *ngIf="loading">Cargando...</div>
+    <div *ngIf="error" class="error">{{ error }}</div>
+  
+    <!-- Formulario para mostrar los datos del pedido -->
+    <form *ngIf="pedido" class="pedido-form">
+      <div>
+        <label>Número de Factura:</label>
+        <input type="text" [value]="pedido.numeroFactura" readonly />
+      </div>
+      <div>
+        <label>Dirección:</label>
+        <input type="text" [value]="pedido.direccion" readonly />
+      </div>
+      <div>
+        <label>Teléfono:</label>
+        <input type="text" [value]="pedido.telefono" readonly />
+      </div>
+      <div>
+        <label>Total:</label>
+        <input type="text" [value]="pedido.total" readonly />
+      </div>
+      <div>
+        <label>Preventas:</label>
+        <ul>
+          <li *ngFor="let preventa of pedido.preventas">
+            {{ preventa.name }} - ${{ preventa.price }}
+          </li>
+        </ul>
+      </div>
+    </form>
+  </div>
+
+  <div class="space" >
+
+  </div>

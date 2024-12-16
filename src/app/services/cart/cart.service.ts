@@ -5,12 +5,12 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class CartService {
-  private cartItems: any[] = [];  // Aquí guardamos los productos del carrito
-  private cartItemsSubject = new BehaviorSubject<any[]>(this.cartItems); // Creamos un BehaviorSubject para emitir los cambios
+  private cartItems: any[] = [];  
+  private cartItemsSubject = new BehaviorSubject<any[]>(this.cartItems); 
 
-  // Método para obtener los productos del carrito
+
   getItems() {
-    return this.cartItemsSubject.asObservable();  // Retornamos un observable para suscribirnos a los cambios
+    return this.cartItemsSubject.asObservable(); 
   }
 
   // Método para agregar un producto al carrito

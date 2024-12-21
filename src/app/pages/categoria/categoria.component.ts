@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component , ViewChild } from '@angular/core';
 import { PedidoServiceService } from 'src/app/services/pedido/pedido-service.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-categoria',
@@ -11,6 +12,7 @@ export class CategoriaComponent {
   pedido: any = null; // Almacena los datos del pedido
   loading: boolean = false; // Indica si la petición está cargando
   error: string | null = null; // Mensaje de error
+  @ViewChild('pedidoForm') pedidoForm?: NgForm;
 
   constructor(private pedidoService: PedidoServiceService) {}
 
@@ -34,4 +36,22 @@ export class CategoriaComponent {
       },
     });
   }
+
+  imprimirPedido(): void {
+    if (this.pedidoForm) { // Comprobación crucial de que el formulario existe
+        if (this.pedidoForm.valid) {
+            console.log(this.pedidoForm.value);
+        } else {
+            console.log("Formulario inválido");
+            // Aquí podrías mostrar un mensaje al usuario indicando que el formulario tiene errores.
+        }
+    } else {
+        console.log("No hay formulario disponible para imprimir.");
+        // Aquí podrías mostrar un mensaje al usuario o realizar otra acción.
+    }
+}
+
+
+
+
 }

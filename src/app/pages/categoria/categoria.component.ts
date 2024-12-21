@@ -35,21 +35,16 @@ export class CategoriaComponent {
         this.loading = false;
       },
     });
+    
+    
   }
 
   imprimirPedido(): void {
-    if (this.pedidoForm) { // Comprobación crucial de que el formulario existe
-        if (this.pedidoForm.valid) {
-            console.log(this.pedidoForm.value);
-        } else {
-            console.log("Formulario inválido");
-            // Aquí podrías mostrar un mensaje al usuario indicando que el formulario tiene errores.
-        }
-    } else {
-        console.log("No hay formulario disponible para imprimir.");
-        // Aquí podrías mostrar un mensaje al usuario o realizar otra acción.
-    }
-}
+
+    console.log("pedi",this.pedido);
+    
+  
+  }
 
 
 

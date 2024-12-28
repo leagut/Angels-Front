@@ -16,7 +16,11 @@ export class PedidoServiceService {
     return this.http.get<any>(`${environment.urlHost}recupero/factura/${numeroFactura}`);
   }
 
-
+  
+  confirmarCompraEfectivo(data: any): Observable<any> {
+    return this.http.post<any>(`${environment.urlHost}compraconfirm/efectivo`, data);
+  }
+  
 
 
 }

@@ -32,7 +32,7 @@ export class CategoriaComponent {
         this.loading = false;
       },
       error: (err) => {
-        this.error = 'Error al recuperar el pedido: ' + err.message;
+        this.error = 'La factura no existe. Por favor, verifique el número de serie.' ;
         this.loading = false;
       },
     });

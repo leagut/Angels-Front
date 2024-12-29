@@ -30,6 +30,7 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CarComponent } from './modulos/car/car.component';
 import { CommonModule } from '@angular/common';
+import { StockComponent } from './pages/stock/stock.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { CommonModule } from '@angular/common';
     BarraComponent,
     CategoriaComponent,
     AddproductComponent,
-    CarComponent
+    CarComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,

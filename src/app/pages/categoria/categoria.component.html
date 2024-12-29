@@ -35,14 +35,25 @@
       </div>
       <div>
         <label>Preventas:</label>
-        <ul>
-          <li *ngFor="let preventa of pedido.preventas">
+        <div class="preventas" >
+          <div *ngFor="let preventa of pedido.preventas">
             {{ preventa.name }} - ${{ preventa.price }}
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </form>
-    <button (click)="imprimirPedido()">Confirmar Venta</button>
+    
+    <div class="confirm-section" *ngIf="pedido">      
+      <div>
+        <input type="checkbox" [(ngModel)]="confirmacionVenta" /> La transacción se realizó con éxito.  
+      </div>
+
+      <div class="centerconfirm" >
+        <button (click)="imprimirPedido()" [disabled]="!confirmacionVenta">Confirmar Venta</button>
+      </div>
+      
+      
+    </div>
   </div>
 
   <div class="space" >

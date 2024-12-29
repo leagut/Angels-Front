@@ -29,12 +29,10 @@
     border-radius: 5px;
     cursor: pointer;
     font-size:medium;
+    
   }
   
-  button:hover {
-    background: #039c0f;
-    font-size:medium;
-  }
+
   
   .error {
     color: rgb(152, 12, 12);
@@ -64,3 +62,33 @@
         width: 20px;
         
   }
+
+
+  .confirm-section{
+    display: block;
+  }
+
+  .preventas{
+    width: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  .centerconfirm{
+    
+    margin-top: 20px;
+  }
+
+  .centerconfirm button:disabled {
+    opacity: 0.5;
+    background-color: #fffbfbc1;
+    color: #090707;
+    border-color: #0c0c0c;
+    cursor: default;
+}
+
+button:hover {
+  background: #039c0f;
+  font-size:medium;
+}

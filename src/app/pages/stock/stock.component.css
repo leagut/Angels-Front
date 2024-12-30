@@ -1,0 +1,27 @@
+.container-stock{
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+        
+    height: 800px;
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255);
+}
+
+.onec{
+    width: 60%;
+    
+    height: 350px;
+    border-radius: 5px;
+    background-color: rgb(2, 2, 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    color: aliceblue;
+}   
+
+.forproducts{
+    width: 80%;
+    border: 1px saddlebrown solid;
+}

@@ -1,8 +1,13 @@
 <div class="container-stock" >
     <div class="onec" >
-      <h1>  Actualmente se registran 3 productos con niveles de stock bajos</h1>
-      <div class="forproducts" >
+        <h1>Actualmente se registran {{ productosBajoStock.length }} productos con niveles de stock bajos</h1>
 
+      <div class="forproducts" >
+        <ul>
+            <h2 *ngFor="let item of productosBajoStock">
+              {{ item }}
+            </h2>
+          </ul>
       </div> 
     </div>
     

@@ -41,5 +41,19 @@ export class ProductsService {
     );
   }
 
+  getSalesData(): Observable<{ 
+    nombreProducto: string; 
+    anio: number; 
+    mes: number; 
+    cantidadVendida: number; 
+  }[]> {
+    return this.http.get<{ 
+      nombreProducto: string; 
+      anio: number; 
+      mes: number; 
+      cantidadVendida: number; 
+    }[]>(`${environment.urlHost}stock/por-mes`);
+  }
+
 
 }

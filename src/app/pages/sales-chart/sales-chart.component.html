@@ -1,0 +1,8 @@
+<div>
+    <label for="productSelect"></label>
+    <select id="productSelect" (change)="onProductSelect($event)">
+      <option *ngFor="let product of products" [value]="product">{{ product }}</option>
+    </select>
+  </div>
+  
+  <div echarts [options]="chartOptions" class="chart-container"></div>

@@ -3,7 +3,7 @@
     display: flex;    
     justify-content: center;
         
-    height: 800px;
+    height: 600px;
     padding-top: 50px;
     background-color: rgb(255, 255, 255);
 }
@@ -25,7 +25,16 @@
 .forproducts{
     width: 80%;
     
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: rgb(252, 154, 33);
     padding-top: 10px;
 }
+
+.charts{
+    padding-top: 15px;
+    padding-left: 15px;
+    background-color: rgb(2, 2, 2);
+    margin-left: 40px;
+    margin-right: 40px;
+    border-radius: 5px;
+}   

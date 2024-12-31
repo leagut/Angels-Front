@@ -31,6 +31,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CarComponent } from './modulos/car/car.component';
 import { CommonModule } from '@angular/common';
 import { StockComponent } from './pages/stock/stock.component';
+import { NgxEchartsModule } from 'ngx-echarts';
+import { SalesChartComponent } from './pages/sales-chart/sales-chart.component';
 
 
 @NgModule({
@@ -50,7 +52,8 @@ import { StockComponent } from './pages/stock/stock.component';
     CategoriaComponent,
     AddproductComponent,
     CarComponent,
-    StockComponent
+    StockComponent,
+    SalesChartComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,10 @@ import { StockComponent } from './pages/stock/stock.component';
     MatSelectModule,
     MatOptionModule,
     MatCheckboxModule,      
-    CommonModule 
+    CommonModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts'),
+    }) 
 
   ],
   providers: [

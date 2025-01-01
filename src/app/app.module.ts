@@ -33,6 +33,7 @@ import { CommonModule } from '@angular/common';
 import { StockComponent } from './pages/stock/stock.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { SalesChartComponent } from './pages/sales-chart/sales-chart.component';
+import { MensajecompraComponent } from './modulos/mensajecompra/mensajecompra.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { SalesChartComponent } from './pages/sales-chart/sales-chart.component';
     AddproductComponent,
     CarComponent,
     StockComponent,
-    SalesChartComponent
+    SalesChartComponent,
+    MensajecompraComponent
   ],
   imports: [
     BrowserModule,

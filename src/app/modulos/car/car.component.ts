@@ -15,6 +15,10 @@ export class CarComponent implements OnInit, OnDestroy {
   totalSuma: number = 0;
   direccion: string = ''; 
   telefono: string = '';  
+  segundoModalVisible: boolean = false;
+  procesandoCompra: boolean = false; 
+
+  
 
   
 
@@ -75,6 +79,7 @@ export class CarComponent implements OnInit, OnDestroy {
     }
   
     const numeroFactura = this.generarNumeroFactura();
+    this.procesandoCompra = true; // Muestra el mensaje de "Procesando"
   
     const compra = {
       numeroFactura,
@@ -94,25 +99,27 @@ export class CarComponent implements OnInit, OnDestroy {
     this.comprasService.enviarCompra(compra).subscribe({
       next: (response) => {
         console.log('Compra registrada con éxito:', response);
-
-        // Aquí puedes agregar lógica adicional, como limpiar el formulario o mostrar un mensaje de éxito
+        this.procesandoCompra = false; // Oculta el mensaje de "Procesando"
+        this.segundoModalVisible = true; // Muestra el segundo modal
+  
+        // Limpiar el carrito y datos del formulario
+        this.cartItems = [];
+        this.totalSuma = 0;
+        this.direccion = '';
+        this.telefono = '';
+        this.cartService.reset();
       },
       error: (error) => {
         console.error('Error al registrar la compra:', error);
+        this.procesandoCompra = false; // Oculta el mensaje de "Procesando" en caso de error
       }
     });
-
-    this.cartItems = [];
-    this.totalSuma = 0;
-    this.direccion = ''; 
-    this.telefono='';  
-
-    this.cartService.reset();
-
-    this.closeModal();
-
   }
-
+  
+  cerrarSegundoModal(): void {
+    this.segundoModalVisible = false;
+    this.closeModal();
+  }
 
 
 
@@ -128,6 +135,6 @@ export class CarComponent implements OnInit, OnDestroy {
   }
 
 
-
+  
 
 }

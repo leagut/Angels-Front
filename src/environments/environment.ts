@@ -1,6 +1,6 @@
 export const environment = {
   production: false,
-  urlHost: 'https://angels-front.vercel.app/', // Apunta a Vercel, que redirige al backend
+  urlHost: '/api/', // Cambiamos la URL para usar el prefijo /api/
   userId: 1
 };
 //https://lnbggvcmnf.execute-api.us-west-2.amazonaws.com/prod/

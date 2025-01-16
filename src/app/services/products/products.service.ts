@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -14,9 +14,23 @@ export class ProductsService {
     return this.http.get<any>(`${environment.urlHost}products/all`)
   }
 
+  
   getAllProductsFilter():Observable<any>{
-    return this.http.get<any>(`${environment.urlHost}products/allfilter`)
+    const headers = new HttpHeaders({
+      'Cache-Control': 'no-cache',
+      'Pragma': 'no-cache',
+      'Expires': '0'
+    });
+  
+    // Agrega un timestamp como parámetro para evitar el cache
+    const timestamp = new Date().getTime();
+    const url = `${environment.urlHost}products/allfilter?t=${timestamp}`;
+    
+    return this.http.get<any>(url, { headers });
   }
+
+
+
 
   updateProduct(product: any): Observable<any> {
     return this.http.put(`${environment.urlHost}products/edit/${product.id}`, product);

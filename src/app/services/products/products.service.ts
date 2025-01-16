@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { catchError, map, Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -14,20 +14,34 @@ export class ProductsService {
     return this.http.get<any>(`${environment.urlHost}products/all`)
   }
 
-  
-  getAllProductsFilter():Observable<any>{
-    const headers = new HttpHeaders({
-      'Cache-Control': 'no-cache',
-      'Pragma': 'no-cache',
-      'Expires': '0'
-    });
-  
-    // Agrega un timestamp como parámetro para evitar el cache
-    const timestamp = new Date().getTime();
-    const url = `${environment.urlHost}products/allfilter?t=${timestamp}`;
-    
-    return this.http.get<any>(url, { headers });
-  }
+
+  getAllProductsFilter(): Observable<any> {
+  const headers = new HttpHeaders({
+    'Accept': 'application/json',
+    'Content-Type': 'application/json',
+    'Cache-Control': 'no-cache',
+    'Pragma': 'no-cache'
+  });
+
+  const timestamp = new Date().getTime();
+  return this.http.get<any>(`${environment.urlHost}products/allfilter?t=${timestamp}`, { 
+    headers,
+    observe: 'response'  // Esto nos permitirá ver la respuesta completa
+  }).pipe(
+    map(response => {
+      console.log('Response headers:', response.headers);
+      console.log('Response body:', response.body);
+      return response.body;
+    }),
+    catchError(error => {
+      console.error('Error completo:', error);
+      if (error.error instanceof Object) {
+        console.log('Error body:', JSON.stringify(error.error));
+      }
+      return throwError(() => error);
+    })
+  );
+}
 
 
 

@@ -19,13 +19,18 @@ export class ProductosComponent implements OnInit {
 
     this.ProductService.getAllProductsFilter().subscribe({
       next:(res)=>{
+        console.log('Datos recibidos:', res);
         this.productsData = res;
-        console.log(res);
+        
         
       },
       error:(err)=>{
         console.log(err);
-        
+        console.error('Error completo:', err);
+      },
+      complete: () => {
+        console.log('Petición completada'); // Agregamos log de completado
+        console.log('Datos en productsData:', this.productsData); // Verificamos los datos asignados
       }
     })
 

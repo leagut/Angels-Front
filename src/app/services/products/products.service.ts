@@ -15,33 +15,9 @@ export class ProductsService {
   }
 
 
-  getAllProductsFilter(): Observable<any> {
-  const headers = new HttpHeaders({
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    'Cache-Control': 'no-cache',
-    'Pragma': 'no-cache'
-  });
-
-  const timestamp = new Date().getTime();
-  return this.http.get<any>(`${environment.urlHost}products/allfilter?t=${timestamp}`, { 
-    headers,
-    observe: 'response'  // Esto nos permitirá ver la respuesta completa
-  }).pipe(
-    map(response => {
-      console.log('Response headers:', response.headers);
-      console.log('Response body:', response.body);
-      return response.body;
-    }),
-    catchError(error => {
-      console.error('Error completo:', error);
-      if (error.error instanceof Object) {
-        console.log('Error body:', JSON.stringify(error.error));
-      }
-      return throwError(() => error);
-    })
-  );
-}
+  getAllProductsFilter():Observable<any>{
+    return this.http.get<any>(`${environment.urlHost}products/allfilter`)
+  }
 
 
 

@@ -7,23 +7,28 @@
   />
 </div>
 
-<div class="productos">
-  <div class="cards" *ngFor="let product of productsData | filter : searchText">
-    <div class="imagen">
-      <img
-        src="https://www.oreo-la.com/images/release/products/Jea7pHdCXozWtQlRyLtADuo565rb9m11037SZMLK.png?v=ok"
-        alt=""
-      />
+
+<div class="contine-productos" >
+  <div class="productos">
+    <div class="cards" *ngFor="let product of productsData | filter : searchText">
+      <div class="imagen">
+        <img
+          src="https://www.oreo-la.com/images/release/products/Jea7pHdCXozWtQlRyLtADuo565rb9m11037SZMLK.png?v=ok"
+          alt=""
+        />
+      </div>
+      <p>
+        <b>Nombre: </b> <span>{{ product?.name }}</span>
+      </p>
+      <p>
+        <b>Precio: </b> <span>{{ product?.price }}</span>
+      </p>
+      <button class="boton" (click)="addToCart(product)">Comprar</button>
     </div>
-    <p>
-      <b>Nombre: </b> <span>{{ product?.name }}</span>
-    </p>
-    <p>
-      <b>Precio: </b> <span>{{ product?.price }}</span>
-    </p>
-    <button class="boton" (click)="addToCart(product)">Comprar</button>
   </div>
 </div>
+
+
 
 <div class="somos" width="95%">
   <div class="content">

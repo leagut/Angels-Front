@@ -34,6 +34,7 @@ import { StockComponent } from './pages/stock/stock.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { SalesChartComponent } from './pages/sales-chart/sales-chart.component';
 import { MensajecompraComponent } from './modulos/mensajecompra/mensajecompra.component';
+import { FloatingButtonComponent } from './shared/floating-button/floating-button.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { MensajecompraComponent } from './modulos/mensajecompra/mensajecompra.co
     CarComponent,
     StockComponent,
     SalesChartComponent,
-    MensajecompraComponent
+    MensajecompraComponent,
+    FloatingButtonComponent
   ],
   imports: [
     BrowserModule,
